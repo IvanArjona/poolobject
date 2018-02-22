@@ -13,17 +13,21 @@ import org.junit.Test;
 import ubu.gii.dass.c01.ReusablePool;
 
 /**
- * @author alumno
+ * @author Arjona Iván
+ * @author Monje Marta
  *
  */
 public class ReusablePoolTest {
-
+	
+	private ReusablePool pool;
+	
 	/**
+	 * 
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
-		ReusablePool pool = ReusablePool.getInstance();
+		pool = ReusablePool.getInstance();
 	}
 
 	/**
@@ -31,6 +35,7 @@ public class ReusablePoolTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		pool = null;
 	}
 
 	/**
