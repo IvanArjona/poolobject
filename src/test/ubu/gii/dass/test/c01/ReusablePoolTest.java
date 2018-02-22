@@ -5,11 +5,11 @@ package ubu.gii.dass.test.c01;
 
 import static org.junit.Assert.*;
 
-import org.hamcrest.core.IsInstanceOf;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import ubu.gii.dass.c01.DuplicatedInstanceException;
 import ubu.gii.dass.c01.NotFreeInstanceException;
 import ubu.gii.dass.c01.Reusable;
 import ubu.gii.dass.c01.ReusablePool;
@@ -69,12 +69,18 @@ public class ReusablePoolTest {
 		Reusable r3 = pool.acquireReusable();
 	}
 
+	
 	/**
+	 * Comprueba la liberación de un objeto Reusable
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}.
+	 * @throws NotFreeInstanceException 
 	 */
-	@Test
-	public void testReleaseReusable() {
-		fail("Not yet implemented");
+	@Test(expected = DuplicatedInstanceException.class)
+	public void testReleaseReusable() throws DuplicatedInstanceException, NotFreeInstanceException {
+		Reusable r = pool.acquireReusable();
+		pool.releaseReusable(r);
+		// Lanza excepción DuplicatedInstanceException
+		pool.releaseReusable(r);
 	}
 
 }
