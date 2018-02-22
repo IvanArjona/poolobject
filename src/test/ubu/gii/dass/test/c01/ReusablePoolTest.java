@@ -54,6 +54,7 @@ public class ReusablePoolTest {
 	}
 
 	/**
+	 * Comprueba AcquireReusable
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#acquireReusable()}.
 	 * @throws NotFreeInstanceException 
 	 */
@@ -66,7 +67,7 @@ public class ReusablePoolTest {
 		assertTrue(r1 instanceof Reusable);
 		assertTrue(r2 instanceof Reusable);
 		
-		Reusable r3 = pool.acquireReusable();
+		pool.acquireReusable();
 	}
 
 	
@@ -82,5 +83,17 @@ public class ReusablePoolTest {
 		// Lanza excepción DuplicatedInstanceException
 		pool.releaseReusable(r);
 	}
-
+	
+	/**
+	 * Comprueba que la cadena que devuelve el método acaba de forma correcta
+	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#Reusable(ubu.gii.dass.c01.Reusable)}.
+	 * @throws NotFreeInstanceException 
+	 */
+	@Test
+	public void testReusable() throws NotFreeInstanceException {
+		Reusable r = pool.acquireReusable();
+		String rs = r.util();
+		//Comprobamos que el final de la cadena devuela es esta
+		assertTrue(rs.endsWith("Uso del objeto Reutilizable"));
+	}
 }
