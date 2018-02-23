@@ -1,6 +1,3 @@
-/**
- * 
- */
 package ubu.gii.dass.test.c01;
 
 import static org.junit.Assert.*;
@@ -15,16 +12,15 @@ import ubu.gii.dass.c01.Reusable;
 import ubu.gii.dass.c01.ReusablePool;
 
 /**
- * @author Arjona Iván
- * @author Monje Marta
- *
+ * Prueba la funcionalidad del Pool.
+ * 
+ * @author Iván Arjona Alonso, Marta Monje Blanco
  */
 public class ReusablePoolTest {
 	
 	private ReusablePool pool;
 	
 	/**
-	 * 
 	 * @throws java.lang.Exception
 	 */
 	@Before

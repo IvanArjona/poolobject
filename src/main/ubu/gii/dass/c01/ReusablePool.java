@@ -1,12 +1,11 @@
 package ubu.gii.dass.c01;
 
-
 import java.util.*;
+
 /**
  * Pool que gestiona dos objetos de tipo Reusables para poder ser compartidos.
  * @author Carlos López clopezno@ubu.es
  */
-
 public final class ReusablePool{
 
 	private Vector<Reusable> reusables;
