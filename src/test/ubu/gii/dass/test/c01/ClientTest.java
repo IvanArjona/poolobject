@@ -1,5 +1,6 @@
 package ubu.gii.dass.test.c01;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Test;
 import ubu.gii.dass.c01.Client;
@@ -15,7 +16,7 @@ public class ClientTest {
 	
 	/**
 	 * Prueba el main del cliente.
-	 * Test method for {@link ubu.gii.dass.c01.Client}.
+	 * Test method for {@link ubu.gii.dass.c01.Client#main(String[])}.
 	 * 
 	 * @throws DuplicatedInstanceException 
 	 * @throws NotFreeInstanceException 
@@ -32,4 +33,16 @@ public class ClientTest {
 		}
 	}
 	
+	/**
+	 * Instance un cliente.
+	 * Test method for {@link ubu.gii.dass.c01.Client}.
+	 * 
+	 * @throws DuplicatedInstanceException 
+	 * @throws NotFreeInstanceException 
+	 */
+	@Test
+	public void instancia() {
+		Client client = new Client();
+		assertTrue(client instanceof Client);
+	}
 }
